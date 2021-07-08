@@ -16,9 +16,8 @@ class ContactController extends Controller
         if ($validated)
         {
             $data = $request->all();
-            $this->sendEmailToMe($data, function(){
-                $this->sendEmailtoUser($data);
-            });
+            $this->sendEmailToMe($data);
+            $this->sendEmailtoUser($data);
             return response()->json([
                 'data' => $data,
                 'message' => 'Thank you for your feedback!'

@@ -21,7 +21,7 @@ class UserMail extends Mailable
     public function build()
     {
         return $this
-        ->from('edwardevbert@gmail.com')
+        ->from('edwardevbert@gmail.com', 'Edward')
         ->subject("Thanks!")
         ->markdown('emails.reply')
         ->with('data', $this->data);
