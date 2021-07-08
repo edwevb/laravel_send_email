@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['POST'],
 
-    'allowed_origins' => ['https://edwardevbert.netlify.app'],
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 
