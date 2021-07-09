@@ -17,7 +17,7 @@ class ContactController extends Controller
         {
             $data = $request->all();
             $this->sendEmailToMe($data);
-            $this->sendEmailtoUser($data);
+            // $this->sendEmailtoUser($data);
             return response()->json([
                 'data' => $data,
                 'message' => 'Thank you for your feedback!'
@@ -27,10 +27,11 @@ class ContactController extends Controller
 
 
     public function sendEmailToMe($data){
-        $myEmail = "meredythackerman@gmail.com";
+        $myEmail = "edwardevbert@gmail.com";
         Mail::to($myEmail)->send(new ContactMail($data));
     }
 
+    //REPLY TO SENDER
     public function sendEmailtoUser($data){
         Mail::to($data['email'])->send(new UserMail($data));
     }
